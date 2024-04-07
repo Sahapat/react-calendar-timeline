@@ -9,6 +9,8 @@ build
 gh-pages
 /lib
 package-lock.json
+pnpm-lock.yaml
+
 # vscode stuff
 .vscode
 

@@ -8,8 +8,9 @@ export const defaultItemRenderer = ({
   getResizeProps
 }) => {
   const { left: leftResizeProps, right: rightResizeProps } = getResizeProps()
+  const { title, ...itemProps } = getItemProps(item.itemProps)
   return (
-    <div {...getItemProps(item.itemProps)}>
+    <div {...itemProps} title={typeof(title) === 'string' ? title : ''}>
       {itemContext.useResizeHandle ? <div {...leftResizeProps} /> : ''}
 
       <div
