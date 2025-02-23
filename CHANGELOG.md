@@ -7,6 +7,18 @@ and this project adheres (more or less) to [Semantic Versioning](http://semver.o
 
 ## Unreleased
 
+* Fix issue where the redraw mechanism was not based on the `buffer` prop.
+* Fix incorrect references to ".umd.js" file paths in the package.json
+
+## 0.30.0 (beta)
+Huge update made by @Remco4EF and @remcoblumink
+ * full rewrite to typescript
+ * uses Vite as bundler
+ * Updates dependencies to latest versions
+ * Updates react usage to 18+
+ * REMOVED enzyme for tests --> testing does not work atm
+ * Added option to drag from external element to the timeline
+ * Added nextjs15 demo to test #939 and removed bundled stylesheet (added somewhere in 0.30.0 reworks...)
 
 ## 0.28.0
 
@@ -393,7 +405,7 @@ from 'react-calendar-timeline'
 
 * added `stickyHeader` to disable/enable timeline header sticking on scroll.
 * removed `fullUpdate` prop and functionality. Labels rely on `position: sticky` to show for items that start before `visibleTimeStart`. This (should) greatly improve scroll performance.
-* removed extraneous css such as `text-align: center` on `.rct-item`, `.rct-item-overflow` to simplify the dom structure of `Item.js`
+* removed extraneous css such as `text-align: center` on `.rct-item`, `.rct-item-overflow` to simplify the dom structure of `Item.tsx`
 * added `headerRef` callback to receive a reference to the header element. Due to the change in how the header positioning is implemented (i.e. using `position: sticky`), there is a need to use a polyfill in [certain browsers](https://caniuse.com/#feat=css-sticky) that don't support `position: sticky`. With a reference to the header dom element, you can use a polyfill to apply sticky behavior.
 * `minimumWidthForItemContentVisibility` prop to control at what width inner item content is rendered.
 
